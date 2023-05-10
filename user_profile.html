@@ -6,15 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="user_profile.css" type = "text/css">
+    <style>
+        .vertical-menu {
+          width: 200px;
+        }
+        
+        .vertical-menu a {
+          background-color: #eee;
+          color: black;
+          display: block;
+          padding: 12px;
+          text-decoration: none;
+        }
+        
+        .vertical-menu a:hover {
+          background-color: #ccc;
+        }
+        
+        .vertical-menu a.active {
+          background-color: #04AA6D;
+          color: white;
+        }
+        </style>
 </head>
 <body>
-    <div class="container">
-        <div class="center">
-            <a href="add_ranking.html"><button>Add New Ranking</button></a>
-            <p></p>
-            <a href="all_rankings.html"><button>Search Rankings</button></a>
-        </div>
-      </div>
-      <img src="circle.png" alt="profile pic" width="200" height="200">
+    <div class="vertical-menu">
+        <a href="index.html">Home</a>
+        <a href="user_profile.html" class="active">PROFILE</a>
+        <a href="add_ranking.html">ADD NEW RANKING</a>
+        <a href="all_rankings.html">SEARCH SHOWS</a>
+        <a href="#">LOGOUT</a>
+    </div>
 </body>
 </html>

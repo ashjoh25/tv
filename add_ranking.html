@@ -4,9 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <title>Add New Textbook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/add_book.css">
+    <link rel="icon" type="image/x-icon" href="/imgs/logo.png">
 <body>
-    
+
+    <div class="container">
+
+        <div class="section">
+            <h2>Add Show Ranking</h2>
+            <form method="post" action="/full_list">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input type="text" name="title_name" id="nameInput" class="validate" data-length="32" required placeholder="Title:">
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" name="subject_name" id="nameInput" class="validate" data-length="32" required placeholder="Subject:"> 
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" name="author_name" id="nameInput" class="validate" data-length="32" required placeholder="Author:">
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" name="user_info" id="nameInput" class="validate" data-length="32" required placeholder="User Information:">
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" name="extra_info" id="nameInput" class="validate" data-length="32" required placeholder="Additional Information:">
+                    </div>
+                    <div class="b">
+                        <button class="btn waves-effect waves-light" type="submit" >
+                            <i class="material-icons right">send</i>
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

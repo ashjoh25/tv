@@ -1,9 +1,11 @@
 body {
     text-align: center;
+    background-color: aquamarine;
 }
 .container {
     height: 600px;
     position: relative;
+    /* background-color: blue; */
 }
   
 .center {

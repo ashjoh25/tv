@@ -1,0 +1,79 @@
+html {
+    background-color: #7b0200;
+}
+
+body {
+    background-color: rgb(220, 187, 122);
+    width: 75%;
+    height: 700px;
+    margin: auto;
+    font-family: 'Zilla Slab';
+    border: solid rgb(202, 161, 104);
+    border-width: 12px;
+}
+
+h1 {
+    color: #661b1b;
+    font-weight: bold;
+}
+
+th {
+    color: #7f2929;
+    width: 150px !important;
+}
+
+td {
+    color: black;
+}
+
+button,
+a {
+    background-color: #7b0200;
+    color: white;
+    border-style: outset;
+    border-color: #2F1000;
+    padding: 0px;
+    text-transform: none;
+    height: 30px;
+    width: 100px;
+    font-family: 'Zilla Slab';
+    display: block;
+    text-align: center;
+}
+
+button:hover,
+a:hover {
+    border-style: inset;
+    background-color: #661b1b;
+    border-color: #7b0200;
+}
+
+#searchbar {
+    width: 120px;
+    margin-left: 15%;
+    padding: 5px;
+    border-radius: 10px;
+    float: right;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: #4f0100;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(165, 132, 86);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(138, 110, 72);
+}
+
+::placeholder {
+    color: rgb(92, 92, 92);
+    font-style: italic;
+    font-family: 'Zilla Slab';
+}
