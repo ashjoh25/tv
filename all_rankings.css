@@ -25,7 +25,12 @@ th {
 td {
     color: rgb(165, 34, 34);
 }
-
+/* .container {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+  } */
 /* button,
 a {
     background-color: #7b0200;

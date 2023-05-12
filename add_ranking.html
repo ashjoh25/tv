@@ -5,33 +5,95 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add New Ranking</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/add_book.css">
-    <link rel="icon" type="image/x-icon" href="/imgs/logo.png">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;1,300&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="/add_ranking.css">
+    <!-- <link rel="icon" type="image/x-icon" href="/imgs/logo.png"> -->
 <body>
+    <div class="vertical-menu">
+        <a href="index.html">Home</a>
+        <a href="user_profile.html">PROFILE</a>
+        <a href="add_ranking.html" class="active">ADD NEW RANKING</a>
+        <a href="all_rankings.html">SEARCH SHOWS</a>
+        <a href="index.html">LOGOUT</a>
+    </div>
+
+    <h1>Add Show Ranking</h1>
+    <div class="container">
+
+    <input type="text" name="show_name" id="nameInput" class="validate" data-length="32" required placeholder="Show Name:">
+</div>
 
     <div class="container">
-        <div class="section">
-            <h2>Add Show Ranking</h2>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input type="text" name="show_name" id="nameInput" class="validate" data-length="32" required placeholder="Show Name:">
+
+                    <label for="genres">Genre:</label>
+                    <select name="" id="genres">
+                      <option value="">Select</option>
+                      <option value="">Fantasy</option>
+                      <option value="">Romance</option>
+                      <option value="">Comedy</option>
+                      <option value="">Drama</option>
+                      <option value="">Sci-Fi</option>
+                      <option value="">Action</option>
+                    </select>
+    </div>
+    <div class="containers">
+
+                        <div class="rate">
+                          <input type="radio" id="star5" name="rate" value="5" />
+                          <label for="star5" title="text">5 stars</label>
+                          <input type="radio" id="star4" name="rate" value="4" />
+                          <label for="star4" title="text">4 stars</label>
+                          <input type="radio" id="star3" name="rate" value="3" />
+                          <label for="star3" title="text">3 stars</label>
+                          <input type="radio" id="star2" name="rate" value="2" />
+                          <label for="star2" title="text">2 stars</label>
+                          <input type="radio" id="star1" name="rate" value="1" />
+                          <label for="star1" title="text">1 star</label>
+                        </div>
                     </div>
-                    <div class="input-field col s6">
-                        <input type="text" name="genre_name" id="nameInput" class="validate" data-length="32" required placeholder="Genre:"> 
-                    </div>
-                    <div class="input-field col s6">
-                        <input type="text" name="ranking" id="nameInput" class="validate" data-length="32" required placeholder="Ranking:">
-                    </div>
-                    <div class="b">
+
+                        <div class="container">
+
+
                         <a href="user_profile.html"><button>Submit</button></a>
                     </div>
-                </div>
-        </div>
+
+
+
+
+
+
+                    <!-- <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a> -->
+
+                    <!-- Dropdown Structure -->
+                    <!-- <ul id='dropdown1' class='dropdown-content'>
+                      <li><a href="#!">one</a></li>
+                      <li><a href="#!">two</a></li>
+                      <li class="divider" tabindex="-1"></li>
+                      <li><a href="#!">three</a></li>
+                      <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+                      <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+                    </ul> -->
+                    <!-- <form action="/add_ranking.html">
+                        <label for="cars">Choose a car:</label>
+                        <select name="cars" id="cars">
+                          <optgroup label="Swedish Cars">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                          </optgroup>
+                          <optgroup label="German Cars">
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                          </optgroup>
+                        </select>
+                        <br><br>
+                        <input type="submit" value="Submit">
+                      </form> -->
     </div>
+    
 </body>
 </html>
