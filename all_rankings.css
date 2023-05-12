@@ -1,11 +1,11 @@
 html {
-    background-color: #7b0200;
+    background-color: #004e7b;
 }
 
 body {
-    background-color: rgb(220, 187, 122);
+    background-color: rgb(122, 204, 220);
     width: 75%;
-    height: 700px;
+    height: 600px;
     margin: auto;
     font-family: 'Zilla Slab';
     border: solid rgb(202, 161, 104);
@@ -13,20 +13,20 @@ body {
 }
 
 h1 {
-    color: #661b1b;
+    color: #1e1b66;
     font-weight: bold;
 }
 
 th {
-    color: #7f2929;
+    color: #297f71;
     width: 150px !important;
 }
 
 td {
-    color: black;
+    color: rgb(165, 34, 34);
 }
 
-button,
+/* button,
 a {
     background-color: #7b0200;
     color: white;
@@ -39,14 +39,14 @@ a {
     font-family: 'Zilla Slab';
     display: block;
     text-align: center;
-}
-
+} */
+/* 
 button:hover,
 a:hover {
     border-style: inset;
     background-color: #661b1b;
     border-color: #7b0200;
-}
+} */
 
 #searchbar {
     width: 120px;
@@ -61,7 +61,7 @@ a:hover {
 }
 
 ::-webkit-scrollbar-track {
-    background: #4f0100;
+    background: #22004f;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -77,3 +77,24 @@ a:hover {
     font-style: italic;
     font-family: 'Zilla Slab';
 }
+
+.vertical-menu {
+    width: 200px;
+  }
+  
+  .vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+  }
+  
+  .vertical-menu a:hover {
+    background-color: #ccc;
+  }
+  
+  .vertical-menu a.active {
+    background-color: #04AA6D;
+    color: white;
+  }

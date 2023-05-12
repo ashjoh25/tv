@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Book List</title>
+    <title>Full Show List</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;1,300&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/full_list.css">
-    <link rel="icon" type="image/x-icon" href="/imgs/logo.png">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;1,300&display=swap"
+        rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="/all_rankings.css">
+    <!-- <link rel="icon" type="image/x-icon" href="/imgs/logo.png"> -->
     <script>
         function search_book() {
             let input = document.getElementById('searchbar').value
@@ -36,40 +36,19 @@
             }
         }
     </script>
-        <style>
-            .vertical-menu {
-              width: 200px;
-            }
-            
-            .vertical-menu a {
-              background-color: #eee;
-              color: black;
-              display: block;
-              padding: 12px;
-              text-decoration: none;
-            }
-            
-            .vertical-menu a:hover {
-              background-color: #ccc;
-            }
-            
-            .vertical-menu a.active {
-              background-color: #04AA6D;
-              color: white;
-            }
-            </style>
 </head>
 
 <body>
-    <input id="searchbar" onkeyup="search_book()" type="text" name="search" placeholder="Search by Subject:">
+    <input id="searchbar" onkeyup="search_book()" type="text" name="search" placeholder="Search:">
+    <!-- <div class="container"> -->
+    <div class="vertical-menu">
+        <a href="index.html">Home</a>
+        <a href="user_profile.html">PROFILE</a>
+        <a href="add_ranking.html">ADD NEW RANKING</a>
+        <a href="all_rankings.html" class="active">SEARCH SHOWS</a>
+        <a href="index.html">LOGOUT</a>
+    </div>
     <div class="container">
-        <div class="vertical-menu">
-            <a href="index.html">Home</a>
-            <a href="user_profile.html" class="active">PROFILE</a>
-            <a href="add_ranking.html">ADD NEW RANKING</a>
-            <a href="all_rankings.html">SEARCH SHOWS</a>
-            <a href="index.html">LOGOUT</a>
-        </div>
         <h1>Show List </h1>
         <table>
             <tr>
