@@ -39,3 +39,14 @@ li a:hover {
   background-color: #555;
   color: white;
 }
+
+img {
+  position: relative;
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 50;
+  display: flex;
+  justify-content: center;
+}
