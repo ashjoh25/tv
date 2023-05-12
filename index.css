@@ -1,6 +1,7 @@
 body {
     text-align: center;
-    background-color: aquamarine;
+    background-color: #a989fa;
+    font-family: 'Papyrus';
 }
 .container {
     height: 600px;
