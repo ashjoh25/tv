@@ -1,15 +1,24 @@
 .container {
     margin: auto;
-    width: 20%;
-    border: 3px solid green;
+    width: 13.5%;
+    /* border: 3px solid pink; */
     padding: 10px;
+    align-items: center;
   }
   .containers {
     margin: auto;
-    width: 25%;
+    width: 170px;
     height: 30px;
-    border: 3px solid green;
+    /* border: 3px solid green; */
     padding: 10px;
+    align-items: center;
+  }
+  .containing {
+    margin: auto;
+    width: 130px;
+    /* border: 3px solid rgb(9, 32, 161); */
+    padding: 10px;
+    align-items: center;
   }
 
   /* body {
@@ -25,30 +34,36 @@
 h1 {
     text-align: center;
 }
+.button {
+  margin: 0;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*{
-    margin: 0;
-    padding: 0;
+  background: #5E5DF0;
+  border-radius: 999px;
+  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
 }
+
+
 .rate {
     float: left;
     height: 46px;
@@ -84,15 +99,10 @@ h1 {
 .rate > label:hover ~ input:checked ~ label {
     color: #c59b08;
 }
-
 /* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
-
-
-
 .vertical-menu {
     width: 200px;
   }
-  
   .vertical-menu a {
     background-color: #eee;
     color: black;
@@ -100,11 +110,9 @@ h1 {
     padding: 12px;
     text-decoration: none;
   }
-  
   .vertical-menu a:hover {
     background-color: #ccc;
   }
-  
   .vertical-menu a.active {
     background-color: #04AA6D;
     color: white;
