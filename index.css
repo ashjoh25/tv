@@ -2,7 +2,15 @@ body {
     text-align: center;
     background-color: #a989fa;
     font-family: 'Papyrus';
+    background-image: url(movie_board.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 108%;
 }
+
+h1 {
+  color:#b8d1d6;
+}
+
 .container {
     height: 600px;
     position: relative;
