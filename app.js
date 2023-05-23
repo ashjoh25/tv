@@ -10,7 +10,7 @@ app.listen( port, () => {
 
 // define a route for the default home page
 app.get( "/", ( req, res ) => {
-    res.sendFile( __dirname + "/views/index.html" );
+    res.sendFile( __dirname + "/index.html" );
 } );
 
 // // define a route for the assignment list page
