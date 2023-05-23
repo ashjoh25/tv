@@ -2,6 +2,11 @@
 const express = require( "express" );
 const app = express();
 const port = 3000;
+const logger = require("morgan");
+
+app.use(logger("dev"));
+app.use(express.static(__dirname + '/public'));
+
 
 // start the server
 app.listen( port, () => {
@@ -30,7 +35,7 @@ app.get( "/", ( req, res ) => {
 
 // define a route for the assignment list page
 app.get( "/user_profile", ( req, res ) => {
-    res.sendFile( __dirname + "/views/user_profile.html" );
+    res.sendFile( __dirname + "/user_profile.html" );
 } );
 
 // // define a route for the assignment detail page
