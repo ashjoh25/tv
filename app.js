@@ -13,6 +13,12 @@ app.listen( port, () => {
     console.log(`App server listening on ${ port }. (Go to http://localhost:${ port })` );
 } );
 
+// define middleware that logs all incoming requests
+app.use((req, res, next) => {
+    console.log(`${req.method} ${req.url}`);
+    next();
+} );
+
 // define a route for the default home page
 app.get( "/", ( req, res ) => {
     res.sendFile( __dirname + "/index.html" );
