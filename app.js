@@ -2,15 +2,31 @@
 const express = require( "express" );
 const app = express();
 const port = 3000;
+const logger = require("morgan");
+const db = require("./db/db_connection");
+app.set("views", __dirname + "/views");
+app.set("view engine", "ejs");
+
+app.use(logger("dev")); // ??
+// define middleware that serves static resources in the public directory
+app.use(express.static(__dirname + '/public')); // ??
+
+app.use( express.urlencoded({ extended: false }) );
 
 // start the server
 app.listen( port, () => {
     console.log(`App server listening on ${ port }. (Go to http://localhost:${ port })` );
 } );
 
+// define middleware that logs all incoming requests
+app.use((req, res, next) => {
+    console.log(`${req.method} ${req.url}`);
+    next();
+} );
+
 // define a route for the default home page
 app.get( "/", ( req, res ) => {
-    res.send( "<h1>Hello world!</h1>" );
+    res.send("index");
 } );
 
 // define a route for the assignment list page
