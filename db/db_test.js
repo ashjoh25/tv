@@ -1,13 +1,13 @@
 const db = require("./db_connection");
 
-// Add query request 
+// Execute query, print results or error 
 db.execute('SELECT 1 + 1 AS solution', 
     (error, results) => {
         if (error)
             throw error;
         console.log(results);
-        console.log(`Solution: ${results[0].solution}`);
     }
 );
-//Optional: close the connection after queue is emptying.
+
+//Optional: close the connection after query queue is empty.
 db.end();
