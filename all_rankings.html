@@ -39,15 +39,34 @@
 </head>
 
 <body>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="/" class="brand-logo">Show Ranker</a>
+                <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <!-- Main nav, hidden for small screens -->
+                <ul id="desktop-nav" class="right hide-on-med-and-down">
+                    <li><a href="/"><i class="material-icons left"></i>Home</a></li>
+                    <li><a href="user_profile.html"><i class="material-icons left"></i>Profile</a></li>
+                    <li><a href="add_ranking.html"><i class="material-icons left"></i>Add Ranking</a></li>
+                    <!-- <% if (isLoggedIn) { %> -->
+                        <!-- <li><a class="red btn" href="/logout"> LOGOUT <%=user.name%>!</a></li> -->
+                    <!-- <% } else { %> -->
+                        <li><a class="blue btn" href="/"> LOGIN</a></li>
+                    <!-- <% } %> -->
+                </ul>
+            </div>
+        </nav>
+    </header>
     <input id="searchbar" onkeyup="search_book()" type="text" name="search" placeholder="Search:">
     <!-- <div class="container"> -->
-    <div class="vertical-menu">
+    <!-- <div class="vertical-menu">
         <a href="index.html">Home</a>
         <a href="user_profile.html">PROFILE</a>
         <a href="add_ranking.html">ADD NEW RANKING</a>
         <a href="all_rankings.html" class="active">SEARCH SHOWS</a>
         <a href="index.html">LOGOUT</a>
-    </div>
+    </div> -->
     <!-- <div class="containing">
         <label for="genres">Genre:</label>
         <select name="" id="genres">
