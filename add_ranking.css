@@ -1,9 +1,9 @@
 body{
   background-color: #bfe6d8;
-  background-image: url(gold.png);
+  /* background-image: url(gold.png);
   background-repeat: no-repeat;
   background-size: 68% 150%;
-  background-position: 200px 0px;
+  background-position: 200px 0px; */
 
 }
 
@@ -52,7 +52,6 @@ h1 {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-
   background: #5E5DF0;
   border-radius: 999px;
   box-shadow: #5E5DF0 0 10px 20px -10px;
@@ -110,21 +109,27 @@ h1 {
 .rate > label:hover ~ input:checked ~ label {
     color: #c59b08;
 }
-/* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
-.vertical-menu {
-    width: 200px;
-  }
-  .vertical-menu a {
-    background-color: #eee;
-    color: black;
-    display: block;
-    padding: 12px;
-    text-decoration: none;
-  }
-  .vertical-menu a:hover {
-    background-color: #ccc;
-  }
-  .vertical-menu a.active {
-    background-color: #04AA6D;
-    color: white;
-  }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}

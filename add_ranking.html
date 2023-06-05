@@ -12,14 +12,32 @@
     <!-- <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;1,300&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" type="text/css" href="/add_ranking.css">
     <!-- <link rel="icon" type="image/x-icon" href="/imgs/logo.png"> -->
+  </head>
 <body>
-    <div class="vertical-menu">
+  <header>
+    <nav>
+        <div class="nav-wrapper">
+            <ul id="desktop-nav" class="right hide-on-med-and-down">
+                <li><a href="/">Home</a></li>
+                <li><a href="user_profile.html">Profile</a></li>
+                <li><a href="add_ranking.html">Add Ranking</a></li>
+                <li><a href="all_rankings.html">Full Ranking List</a></li>
+                <!-- <% if (isLoggedIn) { %> -->
+                    <!-- <li><a class="red btn" href="/logout"> LOGOUT <%=user.name%>!</a></li> -->
+                <!-- <% } else { %> -->
+                    <li><a class="blue btn" href="/"> LOGIN</a></li>
+                <!-- <% } %> -->
+            </ul>
+        </div>
+    </nav>
+</header>
+    <!-- <div class="vertical-menu">
         <a href="index.html">Home</a>
         <a href="user_profile.html">PROFILE</a>
         <a href="add_ranking.html" class="active">ADD NEW RANKING</a>
         <a href="all_rankings.html">SEARCH SHOWS</a>
         <a href="index.html">LOGOUT</a>
-    </div>
+    </div> -->
 
     <h1>Add Show Ranking</h1>
     <div class="container">

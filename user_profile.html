@@ -4,43 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="user_profile.css" type = "text/css">
-    <style>
-        .vertical-menu {
-          width: 200px;
-        }
-        
-        .vertical-menu a {
-          background-color: #eee;
-          color: black;
-          display: block;
-          padding: 12px;
-          text-decoration: none;
-        }
-        
-        .vertical-menu a:hover {
-          background-color: #ccc;
-        }
-        
-        .vertical-menu a.active {
-          background-color: #04AA6D;
-          color: white;
-        }
-        </style>
 </head>
 <body>
-
-    <div class="vertical-menu">
-        <a href="index.html">Home</a>
-        <a href="user_profile.html" class="active">PROFILE</a>
-        <a href="add_ranking.html">ADD NEW RANKING</a>
-        <a href="all_rankings.html">SEARCH SHOWS</a>
-        <a href="index.html">LOGOUT</a>
-    </div>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="/" class="brand-logo">Show Ranker</a>
+                <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <!-- Main nav, hidden for small screens -->
+                <ul id="desktop-nav" class="right hide-on-med-and-down">
+                    <li><a href="add_ranking.html">Add Ranking</a></li>
+                    <li><a href="all_rankings.html">All Rankings</a></li>
+                    <!-- <% if (isLoggedIn) { %> -->
+                        <!-- <li><a class="red btn" href="/logout"> LOGOUT <%=user.name%>!</a></li> -->
+                    <!-- <% } else { %> -->
+                        <li><a class="blue btn" href="/"> LOGIN</a></li>
+                    <!-- <% } %> -->
+                </ul>
+            </div>
+        </nav>
+    </header>
     <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
 <p><label for="file" style="cursor: pointer;">Upload Profile Picture</label></p>
 <p><img id = "output" width="10" alt = "stupid.jpg" /></p>
+    <!-- <script> M.AutoInit();</script> -->
 
 <script>
       var loadFile = function(event) {
