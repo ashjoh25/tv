@@ -16,9 +16,11 @@
   },
   "homepage": "https://github.com/ashjoh25/tv#readme",
   "dependencies": {
+    "dotenv": "^16.1.4",
     "express": "^4.18.2",
     "morgan": "^1.10.0",
-    "mysql2": "^3.3.2"
+    "mysql": "^2.18.1",
+    "mysql2": "^3.3.3"
   },
   "description": ""
 }
