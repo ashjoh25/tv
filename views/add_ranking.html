@@ -5,11 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add New Ranking</title>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;1,300&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/add_ranking.css">
     <!-- <link rel="icon" type="image/x-icon" href="/imgs/logo.png"> -->
   </head>
@@ -17,11 +13,11 @@
   <header>
     <nav>
         <div class="nav-wrapper">
+          <a href="/" class="brand-logo">Show Ranker</a>
             <ul id="desktop-nav" class="right hide-on-med-and-down">
                 <li><a href="/">Home</a></li>
-                <li><a href="user_profile.html">Profile</a></li>
-                <li><a href="add_ranking.html">Add Ranking</a></li>
-                <li><a href="all_rankings.html">Full Ranking List</a></li>
+                <li><a href="/user_profile">Profile</a></li>
+                <li><a href="/add_ranking/all_rankings">Full Ranking List</a></li>
                 <!-- <% if (isLoggedIn) { %> -->
                     <!-- <li><a class="red btn" href="/logout"> LOGOUT <%=user.name%>!</a></li> -->
                 <!-- <% } else { %> -->
@@ -31,14 +27,6 @@
         </div>
     </nav>
 </header>
-    <!-- <div class="vertical-menu">
-        <a href="index.html">Home</a>
-        <a href="user_profile.html">PROFILE</a>
-        <a href="add_ranking.html" class="active">ADD NEW RANKING</a>
-        <a href="all_rankings.html">SEARCH SHOWS</a>
-        <a href="index.html">LOGOUT</a>
-    </div> -->
-
     <h1>Add Show Ranking</h1>
     <div class="container">
       <input type="text" name="show_name" id="nameInput" class="validate" data-length="32" required placeholder="Show Name:">
@@ -72,7 +60,7 @@
     </div>
 
     <div class="button">
-        <a href="user_profile.html">Submit</a>
+        <a href="/user_profile">Submit</a>
     </div>
     <script> M.AutoInit();</script>
 </body>
