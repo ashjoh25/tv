@@ -25,7 +25,7 @@ const create_shows_table_sql = `
         showtId INT NOT NULL AUTO_INCREMENT,
         showTitle VARCHAR(45) NOT NULL,
         genreId INT NOT NULL,
-        dayWatched DATE NULL,
+        dayFinished DATE NULL,
         description VARCHAR(150) NULL,
         PRIMARY KEY (showId),
         INDEX showGenre_idx (genreId ASC),
