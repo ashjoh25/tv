@@ -1,10 +1,16 @@
 body{
-  background-color: #bfe6d8;
+  background-color: #C4B0FF
   /* background-image: url(gold.png);
   background-repeat: no-repeat;
   background-size: 68% 150%;
   background-position: 200px 0px; */
 
+}
+a {
+  color:white !important;
+}
+.nav-wrapper {
+  background-color: #7342e4 !important;
 }
 
 .container {
@@ -50,25 +56,15 @@ h1 {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  background: #5E5DF0;
+  background: #7342e4;
   border-radius: 999px;
-  box-shadow: #5E5DF0 0 10px 20px -10px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  font-family: "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji","Segoe UI Symbol","Android Emoji","Segoe UI","Helvetica Neue","Noto Sans";
+  box-shadow: #25024f 0 10px 20px -10px;
+  font-family: "Apple Color Emoji","Segoe UI Emoji";
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   opacity: 1;
-  outline: 0 solid transparent;
   padding: 8px 18px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: fit-content;
-  word-break: break-word;
-  border: 0;
 }
 
 
@@ -94,16 +90,16 @@ h1 {
     content: '★ ';
 }
 .rate > input:checked ~ label {
-    color: #ffc700;    
+    color: #6d29ff;    
 }
 .rate:not(:checked) > label:hover,
 .rate:not(:checked) > label:hover ~ label {
-    color: #deb217;  
+  color: #5016ce;    
 }
 .rate > input:checked + label:hover,
 .rate > input:checked + label:hover ~ label,
 .rate > input:checked ~ label:hover,
 .rate > input:checked ~ label:hover ~ label,
 .rate > label:hover ~ input:checked ~ label {
-    color: #c59b08;
+  color: #3c03b7;    
 }

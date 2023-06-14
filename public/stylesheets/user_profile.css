@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(202, 202, 207);
+  background-color: #C4B0FF
 }
 
 .container {
@@ -45,4 +45,7 @@ img {
   margin: 50;
   display: flex;
   justify-content: center;
+}
+.nav-wrapper {
+  background-color: #7342e4 !important;
 }

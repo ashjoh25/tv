@@ -14,24 +14,23 @@ db.execute(drop_genres_table_sql);
 
 const create_genres_table_sql = `
     CREATE TABLE genres (
-        genreId INT NOT NULL AUTO_INCREMENT,
+        genre_id INT NOT NULL AUTO_INCREMENT,
         genreName VARCHAR(45) NOT NULL,
-        PRIMARY KEY (genreId));
+        PRIMARY KEY (genre_id));
 `
 db.execute(create_genres_table_sql);
 
 const create_shows_table_sql = `
     CREATE TABLE shows (
-        showtId INT NOT NULL AUTO_INCREMENT,
-        showTitle VARCHAR(45) NOT NULL,
-        genreId INT NOT NULL,
-        dayWatched DATE NULL,
+        show_id INT NOT NULL AUTO_INCREMENT,
+        name VARCHAR(45) NOT NULL,
+        genre_id INT NOT NULL,
         description VARCHAR(150) NULL,
-        PRIMARY KEY (showId),
-        INDEX showGenre_idx (genreId ASC),
+        PRIMARY KEY (show_id),
+        INDEX showGenre_idx (genre_id ASC),
         CONSTRAINT showGenre
-            FOREIGN KEY (genreId)
-            REFERENCES genres (genreId)
+            FOREIGN KEY (genre_id)
+            REFERENCES genres (genre_id)
             ON DELETE RESTRICT
             ON UPDATE CASCADE);
 `
