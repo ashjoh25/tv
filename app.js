@@ -13,10 +13,7 @@ app.set("view engine", "ejs");
 // app.use(express.static('public'));
 
 // *** GET Routes - display pages ***
-// Root Route
-app.get('/', function (req, res) {
-    res.render('index');
-});
+
 
 // // define middleware that logs all incoming requests
 // app.use((req, res, next) => {
@@ -29,15 +26,18 @@ app.use(express.static(__dirname + '/public'));
 
 
 // define a route for the default home page
-app.get( "/", ( req, res ) => {
-    res.sendFile( __dirname + "/views/index" );
-} );
+// Root Route
+app.get('/', function (req, res) {
+    res.render('index');
+});
 
-// define a route for the assignment list page
+// // define a route for the assignment list page
+// app.get( "/index/user_profile", ( req, res ) => {
+//     res.sendFile( __dirname + "/views/user_profile" );
+// } );
 app.get( "/user_profile", ( req, res ) => {
-    res.sendFile( __dirname + "/views/user_profile" );
-} );
-
+    res.render("user_profile")
+});
 
 // define a route for the assignment list page
 const read_newrank_all_sql = `
@@ -54,14 +54,28 @@ app.get( "/add_ranking", ( req, res ) => {
         if (error)
             res.status(500).send(error); //Internal Server Error
         else
-            res.send(results);
+            res.render("add_ranking")
     });
 });
 
 // define a route for the assignment detail page
+const read_all_rankings_sql = `
+    SELECT
+        name, shows.genre_id, description
+    FROM shows
+    JOIN genres
+        ON shows.genre_id = genres.genre_id
+`
 app.get( "/add_ranking/all_rankings", ( req, res ) => {
-    res.sendFile( __dirname + "/views/all_rankings" );
-} );
+    db.execute(read_all_rankings_sql, [1], (error, results) => {
+        if (DEBUG)
+            console.log(error ? error : results);
+        if (error)
+            res.status(500).send(error); //Internal Server Error
+        else
+            res.render("all_rankings")
+    });
+});
 
 // start the server
 app.listen( port, () => {
