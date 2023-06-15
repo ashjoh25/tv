@@ -14,7 +14,7 @@
             let x = document.getElementsByClassName('books');
 
             for (i = 0; i < x.length; i++) {
-                if (!x[i].innerHTML.toLowerCase().includes(input) && x[i].id == "subject") {
+                if (!x[i].innerHTML.toLowerCase().includes(input) && x[i].id == "name") {
                     for (k = 0; k < 3; k++) {
                         x[i].style.display="none";
                         i++;
@@ -55,6 +55,20 @@
                 <th>Ranking</th>
                 <th>More Info</th> 
             </tr>
+            <% for (let i=0; i < shows.length; i++) { %>
+                <tr>
+                    <td id="subject" class="books">
+                    <!-- <td id="show_id"> -->
+                        <%=shows[i].name%>
+                    </td>
+                    <td class="books">
+                        <%=shows[i].genre_id%>
+                    </td>
+                    <td class="books">
+                        <%=shows[i].description%>
+                    </td>
+                </tr>
+                <% } %>
     </div>
     <script> M.AutoInit();</script>
 </body>
