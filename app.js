@@ -3,10 +3,15 @@ const express = require( "express" );
 const app = express();
 const port = 3600;
 const logger = require("morgan");
+const path = require("path");
+const fs = require("fs");
 const DEBUG = true;
+const dotenv = require('dotenv');
+dotenv.config();
 const db = require('./db/db_connection');
-app.set("views", __dirname + "/views");
-app.set("view engine", "ejs");
+// Configure Express to use EJS
+app.set( "views",  path.join(__dirname , "views"));
+app.set( "view engine", "ejs" );
 
 const { auth } = require('express-openid-connect');
 
@@ -14,6 +19,8 @@ const { auth } = require('express-openid-connect');
 // // Render static files
 // app.use(express.static('public'));
 
+// Configure Express to parse URL-encoded POST request bodies (forms)
+app.use( express.urlencoded({ extended: false }) );
 // *** GET Routes - display pages ***
 
 
@@ -24,14 +31,13 @@ const { auth } = require('express-openid-connect');
 // } );
 
 app.use(logger("dev"));
-app.use(express.static(__dirname + '/public'));
-
+app.use(express.static(path.join(__dirname, 'public') ));
 
 // define a route for the default home page
 // Root Route
-app.get('/', function (req, res) {
+app.get( "/", ( req, res ) => {
     res.render('index');
-});
+} );
 
 // // define a route for the assignment list page
 // app.get( "/index/user_profile", ( req, res ) => {
