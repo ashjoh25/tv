@@ -8,6 +8,8 @@ const db = require('./db/db_connection');
 app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
 
+const { auth } = require('express-openid-connect');
+
 // // Load Node modules
 // // Render static files
 // app.use(express.static('public'));

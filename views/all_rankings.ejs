@@ -7,6 +7,7 @@
     <title>Full Show List</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/all_rankings.css">
+
     <script>
         function search_book() {
             let input = document.getElementById('searchbar').value
@@ -39,7 +40,6 @@
                 <ul id="desktop-nav" class="right hide-on-med-and-down">
                     <li><a href="/user_profile">Profile</a></li>
                     <li><a href="/add_ranking">Add Ranking</a></li>
-
                 </ul>
             </div>
         </nav>
@@ -55,20 +55,6 @@
                 <th>Ranking</th>
                 <th>More Info</th> 
             </tr>
-            <% for (let i=0; i < shows.length; i++) { %>
-                <tr>
-                    <td id="subject" class="books">
-                    <!-- <td id="show_id"> -->
-                        <%=shows[i].name%>
-                    </td>
-                    <td class="books">
-                        <%=shows[i].genre_id%>
-                    </td>
-                    <td class="books">
-                        <%=shows[i].description%>
-                    </td>
-                </tr>
-                <% } %>
     </div>
     <script> M.AutoInit();</script>
 </body>

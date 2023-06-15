@@ -9,6 +9,7 @@ body {
 
 h1 {
   color:#ffffff;
+  font-size: 35px;
 }
 
 a {
@@ -32,7 +33,6 @@ a {
 
   .button {
     background-color: #000000;
-    border: 0 solid #E5E7EB;
     box-sizing: border-box;
     font-family: "Segoe UI";
     font-weight: 700;
@@ -41,7 +41,7 @@ a {
     padding: .75rem 1.65rem;
     position: relative;
     text-align: center;
-    width: 100%;
+    width: 105%;
     position: relative;
     transform: rotate(-2deg);
     user-select: none;
