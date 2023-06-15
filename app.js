@@ -15,14 +15,27 @@ app.set( "view engine", "ejs" );
 
 const { auth } = require('express-openid-connect');
 
-// // Load Node modules
-// // Render static files
-// app.use(express.static('public'));
+// app.use(helmet({...
+// });
+
+const config = {
+    authRequired: false,
+    auth0Logout: true,
+    secret: 'a long, randomly-generated string stored in env',
+    baseURL: 'http://localhost:<PORT>',
+    clientID: '<YOUR CLIENT ID>',
+    issuerBaseURL: 'https://<YOUR DOMAIN>.us.auth0.com'
+  };
+  app.use(auth(config));
 
 // Configure Express to parse URL-encoded POST request bodies (forms)
 app.use( express.urlencoded({ extended: false }) );
 // *** GET Routes - display pages ***
 
+
+app.get('/authtest', (req, res) => {
+    res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+  });
 
 // // define middleware that logs all incoming requests
 // app.use((req, res, next) => {
