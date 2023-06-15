@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Add New Ranking</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/add_ranking.css">
@@ -18,17 +18,16 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/user_profile">Profile</a></li>
                 <li><a href="/add_ranking/all_rankings">Full Ranking List</a></li>
-
             </ul>
         </div>
     </nav>
-</header>
+  </header>
     <h1>Add Show Ranking</h1>
-    <div class="container">
+    <!-- <div class="container">
       <input type="text" name="show_name" id="nameInput" class="validate" data-length="32" required placeholder="Show Name:">
-    </div>
+    </div> -->
 
-    <div class="containing">
+    <!-- <div class="containing">
       <label for="genres">Genre:</label>
       <select name="" id="genres">
         <option value="">Select</option>
@@ -39,25 +38,63 @@
         <option value="">Sci-Fi</option>
         <option value="">Action</option>
       </select>
-    </div>
-    <div class="containers">
-      <div class="rate">
-        <input type="radio" id="star5" name="rate" value="5" />
-        <label for="star5" title="text">5 stars</label>
-        <input type="radio" id="star4" name="rate" value="4" />
-        <label for="star4" title="text">4 stars</label>
-        <input type="radio" id="star3" name="rate" value="3" />
-        <label for="star3" title="text">3 stars</label>
-        <input type="radio" id="star2" name="rate" value="2" />
-        <label for="star2" title="text">2 stars</label>
-        <input type="radio" id="star1" name="rate" value="1" />
-        <label for="star1" title="text">1 star</label>
+    </div> -->
+<!--  
+    <div class="dropdown">
+      <button class="dropbtn">Dropdown</button>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
       </div>
-    </div>
+    </div> -->
+    <!-- <ul id="dropdown" class="dropdown-content">
+      <li><a href="#">Inbox<span class="badge">12</span></a></li>
+      <li><a href="#!">Unread<span class="new badge">4</span></a></li>
+      <li><a href="#">Sent</a></li>
+      <li class="divider"></li> 
+   </ul> -->
 
-    <div class="button">
-        <a href="/user_profile">Submit</a>
+   <form method="post" action="/add_rankings">
+    <div class="row">
+        <div class="input-field col s6">
+            <input type="text" name="show_name" id="nameInput" class="validate" data-length="32" required placeholder="Show Name:">
+        </div>
+        <div class="input-field col s6">
+            <input type="text" name="genre_name" id="nameInput" class="validate" data-length="32" required placeholder="Genre:">
+        </div>
+        <div class="input-field col s6">
+            <div class="containers">
+              <div class="rate">
+                <input type="radio" id="star5" name="rate" value="5" />
+                <label for="star5" title="text">5 stars</label>
+                <input type="radio" id="star4" name="rate" value="4" />
+                <label for="star4" title="text">4 stars</label>
+                <input type="radio" id="star3" name="rate" value="3" />
+                <label for="star3" title="text">3 stars</label>
+                <input type="radio" id="star2" name="rate" value="2" />
+                <label for="star2" title="text">2 stars</label>
+                <input type="radio" id="star1" name="rate" value="1" />
+                <label for="star1" title="text">1 star</label>
+              </div>
+            </div>
+        </div>
+        <div class="input-field col s6">
+            <input type="text" name="description" id="nameInput" class="validate" data-length="32" required placeholder="Description:">
+        </div>
+        <div class="b">
+            <!-- <button class="btn waves-effect waves-light" type="submit" >
+                <i class="material-icons right">send</i>
+                Submit
+            </button> -->
+            <div class="button" type="submit">
+              <a href="/user_profile">Submit</a>
+            </div>
+        </div>
     </div>
+</form>
+
+
     <script> M.AutoInit();</script>
 </body>
 </html>
