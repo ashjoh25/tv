@@ -1,65 +1,68 @@
-const dotenv = require('dotenv');
+const db = require("./db_connection");
+/**** Delete existing table, if any ****/
 
-dotenv.config();
+const drop_shows_table_sql = "DROP TABLE IF EXISTS `shows`;"
 
-const mysql = require('mysql2');
+db.execute(drop_shows_table_sql);
 
-const dbConfig = {
-    host: process.env.DB_HOST || "localhost",
-    port: parseInt(process.env.DB_PORT || "3306"),
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_DATABASE,
-    connectTimeout: parseInt(process.env.DB_CONNECT_TIMEOUT || "10000")
-}
+const drop_genres_table_sql = "DROP TABLE IF EXISTS `genres`;"
 
-const connection = mysql.createConnection(dbConfig);
-
-module.exports = connection;
+db.execute(drop_genres_table_sql);
 
 
-// const db = require("./db_connection");
-// /**** Delete existing table, if any ****/
+const create_genres_table_sql = `
+    CREATE TABLE genres (
+        genre_id INT NOT NULL AUTO_INCREMENT,
+        genreName VARCHAR(45) NOT NULL,
+        PRIMARY KEY (genre_id));
+`
+db.execute(create_genres_table_sql);
 
-// const drop_stuff_table_sql = "DROP TABLE IF EXISTS `stuff`;"
+const create_shows_table_sql = `
+    CREATE TABLE shows (
+        show_id INT NOT NULL AUTO_INCREMENT,
+        name VARCHAR(45) NOT NULL,
+        genre_id INT,
+        description VARCHAR(150) NULL,
+        ranking INT(5),
+        user_id VARCHAR(100),
+        PRIMARY KEY (show_id)
+        INDEX showsxgenres (genre_id ASC),
+        CONSTRAINT showsxgenres
+            FOREIGN KEY (genre_id)
+            REFERENCES genres (genre_id)
+            ON DELETE RESTRICT
+            ON UPDATE CASCADE);
+`
 
-// db.execute(drop_stuff_table_sql);
+db.execute(create_shows_table_sql);
 
-// /**** Create "stuff" table (again)  ****/
-
-// const create_stuff_table_sql = `
-//     CREATE TABLE shows_list (
-//         id INT NOT NULL AUTO_INCREMENT,
-//         title VARCHAR(100) NOT NULL,
-//         genre VARCHAR(100) NOT NULL,
-//         rank INT NOT NULL,
-//         notes VARCHAR(150) NOT NULL,
-//         PRIMARY KEY (id)
-//     );
-// `
-// db.execute(create_stuff_table_sql);
-
-
-// /**** Create some sample items ****/
+/**** Create some sample items ****/
 
 // const insert_stuff_table_sql = `
-//     INSERT INTO shows_list 
-//         (title, genre, rank, notes) 
+//     INSERT INTO stuff 
+//         (item, due_date, classes, description) 
 //     VALUES 
 //         (?, ?, ?, ?);
 // `
-// db.execute(insert_stuff_table_sql, ['show name', 'genre', 'rank', 'notes']);
+// db.execute(insert_shows_table_sql, ['Chem Webassign', '1/9/23', 'Chemistry', 'ahhh chem']);
 
-// const read_stuff_table_sql = "SELECT * FROM shows_list";
+// db.execute(insert_shows_table_sql, ['Infix Calculator', '1/6/23', 'AP CompSci', 'yayay']);
 
-// db.execute(read_stuff_table_sql, 
-//     (error, results) => {
-//         if (error) 
-//             throw error;
+// db.execute(insert_shows_table_sql, ['Gatsby Essay', '2/3/23', 'AmerLit', 'boooks']);
 
-//         console.log("Table 'shows_list' initialized with:")
-//         console.log(results);
-//     }
-// );
+// db.execute(insert_shows_table_sql, ['American Revolution Presentation', '2/10/23', 'History', 'boop']);
 
-// db.end();
+const read_shows_table_sql = "SELECT * FROM shows";
+
+db.execute(read_shows_table_sql, 
+    (error, results) => {
+        if (error) 
+            throw error;
+
+        console.log("Table 'shows' initialized with:")
+        console.log(results);
+    }
+);
+
+db.end();
