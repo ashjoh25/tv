@@ -12,7 +12,7 @@
         function search_book() {
             let input = document.getElementById('searchbar').value
             input = input.toLowerCase();
-            let x = document.getElementsByClassName('books');
+            let x = document.getElementsByClassName('title');
 
             for (i = 0; i < x.length; i++) {
                 if (!x[i].innerHTML.toLowerCase().includes(input) && x[i].id == "name") {
@@ -62,13 +62,16 @@
             </tr>
             <% for (let i=0; i < shows.length; i++) { %>
                 <tr>
-                    <td id="subject" class="books">
+                    <td id="name" class="title">
                         <%=shows[i].name%>
                     </td>
-                    <td class="books">
+                    <td class="title">
                         <%=shows[i].genreName%>
                     </td>
-                    <td class="books">
+                    <td class="title">
+                        <%=shows[i].ranking%>
+                    </td>
+                    <td class="title">
                         <%=shows[i].description%>
                     </td>
                 </tr>

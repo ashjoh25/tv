@@ -112,12 +112,12 @@ app.get( "/add_ranking/all_rankings", requiresAuth(), ( req, res ) => {
 // define a route for item CREATE
 const create_show_sql = `
     INSERT INTO shows
-        (name, genre_id, description, ranking)
+        (name, genre_id, description, ranking, user_id)
     VALUES
-        (?, ?, ?, ?)
+        (?, ?, ?, ?, ?)
 `
 app.post("/all_rankings", ( req, res ) => {
-    db.execute(create_show_sql, [req.body.show_name, req.body.genre_label, req.body.description_info, req.body.ranking_num], (error, results) => {
+    db.execute(create_show_sql, [req.body.show_name, req.body.genre_label, req.body.description_info, req.body.ranking_num, req.oidc.user.email], (error, results) => {
         if (error)
             res.status(500).send(error); //Internal Server Error
         else {
