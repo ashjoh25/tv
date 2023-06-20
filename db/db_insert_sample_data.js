@@ -10,36 +10,41 @@ const delete_genres_table_sql = "DELETE FROM genres;"
 
 db.execute(delete_genres_table_sql);
 
-
 /**** Create some sample subjects and assignments ****/
 
-const insert_genre_sql = `
+const insert_genres_sql = `
     INSERT INTO genres 
-        (genreName) 
+        (genre_id, genreName) 
     VALUES 
-        (?);
+        (?, ?);
 `
 
-db.execute(insert_genre_sql, ['Fantasy']);
+db.execute(insert_genres_sql, [1, 'Fantasy']);
 
-db.execute(insert_genre_sql, ['Romance']);
+db.execute(insert_genres_sql, [2, 'Romance']);
 
-db.execute(insert_genre_sql, ['Drama']);
+db.execute(insert_genres_sql, [3, 'Action']);
 
-db.execute(insert_genre_sql, ['Comedy']);
+db.execute(insert_genres_sql, [4, 'Comedy']);
+
+db.execute(insert_genres_sql, [5, 'Drama']);
+
 
 
 const insert_shows_sql = `
     INSERT INTO shows
-        (name, genre_id, description) 
+        (name, genre_id, description, ranking) 
     VALUES 
-        (?, ?, ?);
+        (?, ?, ?, ?);
 `
 
-db.execute(insert_shows_sql, ['help', 1, 'help!!!!!!']);
+//subjectId: 2 => 'Math'
+db.execute(insert_shows_sql, ['The Glory', 5, 'really good', 4]);
 
-db.execute(insert_shows_sql, ['pls send help', 3, 'asdfgh']);
+//subjectId: 3 => 'Language'
+db.execute(insert_shows_sql, ['The Office', 4, 'funny', 3]);
 
-db.execute(insert_shows_sql, ['ahhh', 4, 'poiuytree']);
+//subjectId: 1 => 'Comp Sci'
+db.execute(insert_shows_sql, ['NCIS', 3, 'kinda boring', 2]);
 
 db.end();
