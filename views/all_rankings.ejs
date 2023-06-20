@@ -60,6 +60,19 @@
                 <th>Ranking</th>
                 <th>More Info</th> 
             </tr>
+            <% for (let i=0; i < shows.length; i++) { %>
+                <tr>
+                    <td id="subject" class="books">
+                        <%=shows[i].name%>
+                    </td>
+                    <td class="books">
+                        <%=shows[i].genreName%>
+                    </td>
+                    <td class="books">
+                        <%=shows[i].description%>
+                    </td>
+                </tr>
+                <% } %>
     </div>
     <script> M.AutoInit();</script>
 </body>

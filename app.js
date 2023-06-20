@@ -66,8 +66,8 @@ app.get('/authtest', (req, res) => {
 
 // define a route for the assignment list page
 const read_newrank_all_sql = `
-    SELECT 
-        show_id, name, shows.genre_id as genre_id, description, ranking
+    SELECT
+        show_id, name, genreName, description, ranking
     FROM shows
     JOIN genres
         ON shows.genre_id = genres.genre_id
@@ -86,21 +86,47 @@ app.get( "/add_ranking", requiresAuth(), ( req, res ) => {
 // define a route for the assignment detail page
 const read_all_rankings_sql = `
     SELECT
-        name, shows.genre_id, ranking, description
+        name, genreName, ranking, description
     FROM shows
     JOIN genres
         ON shows.genre_id = genres.genre_id
 `
 app.get( "/add_ranking/all_rankings", requiresAuth(), ( req, res ) => {
-    db.execute(read_all_rankings_sql, [1], (error, results) => {
+    db.execute(read_all_rankings_sql, (error, results) => {
         if (DEBUG)
             console.log(error ? error : results);
         if (error)
             res.status(500).send(error); //Internal Server Error
         else
-            res.render("all_rankings")
+            res.render("all_rankings", {shows: results})
+        //         if (error) {
+        //     res.status(500).send(error); //Internal Server Error
+        // }
+        // else {
+        //     res.render('all_rankings', {shows: results});
+        // }
     });
 });
+
+
+// define a route for item CREATE
+const create_show_sql = `
+    INSERT INTO shows
+        (name, genre_id, description, ranking)
+    VALUES
+        (?, ?, ?, ?)
+`
+app.post("/all_rankings", ( req, res ) => {
+    db.execute(create_show_sql, [req.body.show_name, req.body.genre_label, req.body.description_info, req.body.ranking_num], (error, results) => {
+        if (error)
+            res.status(500).send(error); //Internal Server Error
+        else {
+            //results.insertId has the primary key (id) of the newly inserted element.
+            res.redirect(`/add_ranking/all_rankings`);
+        }
+    });
+})
+
 
 // start the server
 app.listen( port, () => {

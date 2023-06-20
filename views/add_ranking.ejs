@@ -40,10 +40,10 @@
     </nav>
   </header>
     <h1>Add Show Ranking</h1>
-   <form method="post" action="/add_rankings">
+   <!-- <form method="post" action="/all_rankings">
     <div class="container">
     <div class="row">
-        <div class="input-field col s3">
+        <div class="input-field col s15">
           <input type="text" name="show_name" id="nameInput" class="validate" data-length="32" placeholder="Show Name:" required>
           <ul id="dropdown" class="dropdown-content">
             <li><a>Fantasy</a></li>
@@ -76,6 +76,52 @@
         </div>
       </div>
     </div>
+</form> -->
+<form method="post" action="/all_rankings">
+  <div class="row">
+      <div class="input-field col s3">
+          <input type="text" name="show_name" id="nameInput" class="validate" data-length="32" required placeholder="Show Name:">
+      </div>
+      <!-- <div class="input-field col s3">
+          <input type="text" name="genre_label" id="nameInput" class="validate" data-length="32" required placeholder="Genre:"> 
+      </div> -->
+      <div class="input-field col s6">
+        <select type="number" id="genreInput" name="genre_label" required>
+            <option value=1   <% if (genres.genre_id == 1) { %> selected <% } %>> Fantasy </option>
+            <% for (let i = 0; i < genre_list.length; i++) { %>
+                <option value=<%=genre_list[i].subjectID%>><%=genre_list[i].genreName%></option>
+            <% } %>
+        </select>
+        <label for="subject_name">Subject Name:</label>
+    </div>
+      <div class="input-field col s4">
+          <input type="text" name="description_info" id="nameInput" class="validate" data-length="32" required placeholder="Description:">
+      </div>
+      <!-- <div class="input-field col s3">
+        <input type="text" name="ranking_num" id="nameInput" class="validate" data-length="32" required placeholder="Ranking:">
+      </div> -->
+        <div class="rate">
+          <input type="radio" name="ranking_num" id="star5" name="rate" value="5"  required/>
+          <label for="star5" title="text">5 stars</label>
+          <input type="radio" name="ranking_num" id="star4" name="rate" value="4" />
+          <label for="star4" title="text">4 stars</label>
+          <input type="radio" name="ranking_num" id="star3" name="rate" value="3" />
+          <label for="star3" title="text">3 stars</label>
+          <input type="radio" name="ranking_num" id="star2" name="rate" value="2" />
+          <label for="star2" title="text">2 stars</label>
+          <input type="radio" name="ranking_num" id="star1" name="rate" value="1" />
+          <label for="star1" title="text">1 star</label>
+        </div>
+
+
+      
+      <div class="b">
+          <button class="btn waves-effect waves-light" type="submit" >
+              <i class="material-icons right">send</i>
+              Submit
+          </button>
+      </div>
+  </div>
 </form>
     <script> M.AutoInit();</script>
 </body>

@@ -1,10 +1,5 @@
 body{
   background-color: #C4B0FF
-  /* background-image: url(gold.png);
-  background-repeat: no-repeat;
-  background-size: 68% 150%;
-  background-position: 200px 0px; */
-
 }
 
 
@@ -13,9 +8,13 @@ a {
 }
 
 .dropdown-content {
-  background-color:rgb(22, 92, 92) !important;
-  color: pink !important;
+  background-color:rgb(68, 32, 140) !important;
+  color: rgb(128, 59, 174) !important;
 }
+
+/* #dropdown {
+  background-color: blue !important;
+} */
 
 .nav-wrapper {
   background-color: #7342e4 !important;
@@ -43,16 +42,6 @@ a {
     padding: 10px;
     align-items: center;
   }
-
-  /* body {
-    background-color: rgb(122, 204, 220);
-    width: 75%;
-    height: 600px;
-    margin: auto;
-    font-family: 'Zilla Slab';
-    border: solid rgb(202, 161, 104);
-    border-width: 12px;
-} */
 
 h1 {
     text-align: center;
