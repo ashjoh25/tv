@@ -56,13 +56,6 @@ app.get('/authtest', (req, res) => {
       res.render('index')
   });
 
-// // define a route for the assignment list page
-// app.get( "/index/user_profile", ( req, res ) => {
-//     res.sendFile( __dirname + "/views/user_profile" );
-// } );
-// app.get( "/user_profile", ( req, res ) => {
-//     res.render("user_profile")
-// });
 
 // define a route for the assignment list page
 const read_newrank_all_sql = `
@@ -71,15 +64,16 @@ const read_newrank_all_sql = `
     FROM shows
     JOIN genres
         ON shows.genre_id = genres.genre_id
+    WHERE user_id = ?
 `
 app.get( "/add_ranking", requiresAuth(), ( req, res ) => {
-    db.execute(read_newrank_all_sql, (error, results) => {
+    db.execute(read_newrank_all_sql, [req.oidc.user.sub], (error, results) => {
         if (DEBUG)
             console.log(error ? error : results);
         if (error)
             res.status(500).send(error); //Internal Server Error
         else
-            res.render("add_ranking")
+            res.render("add_ranking", {shows: results})
     });
 });
 
@@ -90,21 +84,17 @@ const read_all_rankings_sql = `
     FROM shows
     JOIN genres
         ON shows.genre_id = genres.genre_id
+    WHERE user_id = ?
+    ORDER BY show_id DESC
 `
 app.get( "/add_ranking/all_rankings", requiresAuth(), ( req, res ) => {
-    db.execute(read_all_rankings_sql, (error, results) => {
+    db.execute(read_all_rankings_sql, [req.oidc.user.sub], (error, results) => {
         if (DEBUG)
             console.log(error ? error : results);
         if (error)
             res.status(500).send(error); //Internal Server Error
         else
             res.render("all_rankings", {shows: results})
-        //         if (error) {
-        //     res.status(500).send(error); //Internal Server Error
-        // }
-        // else {
-        //     res.render('all_rankings', {shows: results});
-        // }
     });
 });
 
@@ -116,12 +106,11 @@ const create_show_sql = `
     VALUES
         (?, ?, ?, ?, ?)
 `
-app.post("/all_rankings", ( req, res ) => {
-    db.execute(create_show_sql, [req.body.show_name, req.body.genre_label, req.body.description_info, req.body.ranking_num, req.oidc.user.email], (error, results) => {
+app.post("/all_rankings", requiresAuth(), ( req, res ) => {
+    db.execute(create_show_sql, [req.body.show_name, req.body.genre_label, req.body.description_info, req.body.ranking_num, req.oidc.user.sub], (error, results) => {
         if (error)
             res.status(500).send(error); //Internal Server Error
         else {
-            //results.insertId has the primary key (id) of the newly inserted element.
             res.redirect(`/add_ranking/all_rankings`);
         }
     });

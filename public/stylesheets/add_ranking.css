@@ -2,6 +2,14 @@ body{
   background-color: #C4B0FF
 }
 
+h6 {
+  text-align: center;
+  font-weight: bold;
+}
+
+p {
+  text-align: center;
+}
 
 a {
   color:white !important;

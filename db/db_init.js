@@ -25,7 +25,7 @@ const create_shows_table_sql = `
         genre_id INT,
         description VARCHAR(150) NULL,
         ranking INT(5),
-        user_id VARCHAR(100) NOT NULL,
+        user_id VARCHAR(100) NULL,
         PRIMARY KEY (show_id)
         INDEX showsxgenres (genre_id ASC),
         CONSTRAINT showsxgenres

@@ -85,7 +85,6 @@
       <div class="input-field col s3">
           <input type="text" name="genre_label" id="nameInput" class="validate" data-length="32" required placeholder="Genre:"> 
       </div>
-
       <div class="input-field col s4">
           <input type="text" name="description_info" id="nameInput" class="validate" data-length="32" required placeholder="Description:">
       </div>
@@ -114,13 +113,23 @@
           </button>
       </div>
       <div class="input-field col s7">
-        <p>Input Genre as such:
-          1 - Fantasy
-          2 - Romance
-          3 - Comedy
-          4 - Drama
-        </p>
+        <p>Input Genre as such:</p>
+        <li>1 - Fantasy</li>
+        <li>2 - Romance</li>
+        <li>3 - Action</li>
+        <li>4 - Comedy</li>
+        <li>5 - Drama</li>
     </div>
+    <div>
+      <div class="input-field col s6">
+      <select type="number" id="nameInput" name="genre_label" required>
+          <option value="" disabled selected>Choose your subject</option>
+          <% for (let i = 0; i < genres.length; i++) { %>
+              <option value=<%= genres[i].genre_id%>><%=genres[i].genre_id%></option>
+          <% } %>
+      </select>
+      <label for="genre_label">Subject Name:</label>
+  </div>
   </div>
 </form>
     <script> M.AutoInit();</script>
