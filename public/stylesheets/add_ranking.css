@@ -7,12 +7,18 @@ h6 {
   font-weight: bold;
 }
 
-.b {
-  /* text-align: center; */
+.helpme {
+  text-align: center;
+
+  columns: 2;
+  -webkit-columns: 1;
+  /* -moz-columns: .5; */
 }
 
-p {
-  text-align: center;
+button {
+  background-color: #3c03b7 !important;
+  top: 75.5%;
+  left: -4.5%;
 }
 
 a {
@@ -57,23 +63,6 @@ a {
 
 h1 {
     text-align: center;
-}
-.button {
-  margin: 0;
-  position: absolute;
-  top: 75%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  background: #7342e4;
-  border-radius: 999px;
-  box-shadow: #25024f 0 10px 20px -10px;
-  font-family: "Apple Color Emoji","Segoe UI Emoji";
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 24px;
-  opacity: 1;
-  padding: 8px 18px;
 }
 
 .rate {

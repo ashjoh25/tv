@@ -40,51 +40,8 @@
     </nav>
   </header>
     <h1>Add Show Ranking</h1>
-   <!-- <form method="post" action="/all_rankings">
-    <div class="container">
-    <div class="row">
-        <div class="input-field col s15">
-          <input type="text" name="show_name" id="nameInput" class="validate" data-length="32" placeholder="Show Name:" required>
-          <ul id="dropdown" class="dropdown-content">
-            <li><a>Fantasy</a></li>
-            <li><a>Romance</a></li>
-            <li><a>Action</a></li>
-            <li><a>Comedy</a></li>
-            <li><a>Drama</a></li>
-         </ul>
-         <a class="btn dropdown-button" href="#" data-activates="dropdown">Genres<i class="mdi-navigation-arrow-drop-down right"></i></a>
-          <div class="containers">
-            <div class="rate">
-              <input type="radio" id="star5" name="rate" value="5" />
-              <label for="star5" title="text">5 stars</label>
-              <input type="radio" id="star4" name="rate" value="4" />
-              <label for="star4" title="text">4 stars</label>
-              <input type="radio" id="star3" name="rate" value="3" />
-              <label for="star3" title="text">3 stars</label>
-              <input type="radio" id="star2" name="rate" value="2" />
-              <label for="star2" title="text">2 stars</label>
-              <input type="radio" id="star1" name="rate" value="1" />
-              <label for="star1" title="text">1 star</label>
-            </div>
-          </div>
-          <input type="text" name="description" id="nameInput" class="validate" data-length="32" placeholder="Description:" required>
-      </div>
-        <div class="b">
-            <div class="button" type="submit">
-              <a href="/add_ranking/all_rankings">Submit</a>
-            </div>
-        </div>
-      </div>
-    </div>
-</form> -->
+
 <form method="post" action="/all_rankings">
-  <div class="row">
-
-      <!-- <div class="input-field col s3">
-        <input type="text" name="ranking_num" id="nameInput" class="validate" data-length="32" required placeholder="Ranking:">
-      </div> -->
-
-
         <div class="row">
           <div class="input-field col s6">
             <input type="text" name="show_name" id="nameInput" class="validate" data-length="32" required placeholder="Show Name:">
@@ -109,7 +66,6 @@
             <label for="star1" title="text">1 star</label>
             </div>
           </div>
-
       
           <button class="btn waves-effect waves-light" type="submit" >
               <i class="material-icons right">send</i>
@@ -117,11 +73,13 @@
           </button>
 
         <h6>Input Genre as such:</h6>
-        <p>1 - Fantasy</p>
-        <p>2 - Romance</p>
-        <p>3 - Action</p>
-        <p>4 - Comedy</p>
-        <p>5 - Drama</p>
+        <ul class="helpme">
+        <li>1 - Fantasy</li>
+        <li>2 - Romance</li>
+        <li>3 - Action</li>
+        <li>4 - Comedy</li>
+        <li>5 - Drama</li>
+        </ul>
 
   </div>
 </form>
