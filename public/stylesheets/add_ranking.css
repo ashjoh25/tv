@@ -9,6 +9,12 @@ body{
 a {
   color:white !important;
 }
+
+.dropdown-content {
+  background-color:rgb(22, 92, 92) !important;
+  color: pink !important;
+}
+
 .nav-wrapper {
   background-color: #7342e4 !important;
 }
@@ -82,7 +88,6 @@ h1 {
     width:1em;
     overflow:hidden;
     white-space:nowrap;
-    cursor:pointer;
     font-size:30px;
     color:#ccc;
 }
