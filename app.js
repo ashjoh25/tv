@@ -67,7 +67,7 @@ app.get('/authtest', (req, res) => {
 // define a route for the assignment list page
 const read_newrank_all_sql = `
     SELECT 
-        show_id, name, shows.genre_id as genre_id description, ranking
+        show_id, name, shows.genre_id as genre_id, description, ranking
     FROM shows
     JOIN genres
         ON shows.genre_id = genres.genre_id
