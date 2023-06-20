@@ -90,7 +90,7 @@
             <input type="text" name="show_name" id="nameInput" class="validate" data-length="32" required placeholder="Show Name:">
           </div>
           <div class="input-field col s6">
-            <input type="number" name="genre_label" id="nameInput" class="validate" data-length="32" required placeholder="Genre:"> 
+            <input type="number" name="genre_label" id="nameInput" class="validate" data-length="32" min="1" max="5" required placeholder="Genre:"> 
           </div>
           <div class="input-field col s6">
             <input type="text" name="description_info" id="nameInput" class="validate" data-length="32" required placeholder="Description:">
@@ -111,12 +111,11 @@
           </div>
 
       
-      <div class="b">
           <button class="btn waves-effect waves-light" type="submit" >
               <i class="material-icons right">send</i>
               Submit
           </button>
-      </div>
+
         <h6>Input Genre as such:</h6>
         <p>1 - Fantasy</p>
         <p>2 - Romance</p>
