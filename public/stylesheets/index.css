@@ -1,22 +1,23 @@
 body {
     text-align: center;
     background-color: #a989fa;
-    font-family: 'Papyrus';
-    background-image: url(/images/movie_board.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 108%;
 }
 
 h1 {
   color:#ffffff;
   font-size: 35px;
+  font-family: 'Papyrus';
+}
+
+.nav-wrapper {
+  background-color: #7342e4 !important;
 }
 
 a {
-  color:white
+  color:white !important;
 }
 .container {
-    height: 600px;
+    height: 500px;
     position: relative;
     /* background-color: blue; */
 }
@@ -29,23 +30,6 @@ a {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
-
-
-  /* .button {
-    background-color: #000000;
-    box-sizing: border-box;
-    font-family: "Segoe UI";
-    font-weight: 700;
-    justify-content: center;
-    line-height: 1.75rem;
-    padding: .75rem 1.65rem;
-    position: relative;
-    text-align: center;
-    width: 105%;
-    position: relative;
-    transform: rotate(-2deg);
-    user-select: none;
-  } */
 
   button {
     background-color: #4b4b4b;
